@@ -1,0 +1,32 @@
+Q: Lambda expression
+Ans: A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+Example:
+interface StringFunction {
+  String run(String str);
+}
+
+public class Main {
+  public static void main(String[] args) {
+    StringFunction exclaim = (s) -> s + "!";
+    StringFunction ask = (s) -> s + "?";
+    printFormatted("Hello", exclaim);
+    printFormatted("Hello", ask);
+  }
+  public static void printFormatted(String str, StringFunction format) {
+    String result = format.run(str);
+    System.out.println(result);
+  }
+}
+-----------------------------------------------------------------
+Q: Stream Api
+Ans:Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.
+Example:
+import java.util.stream.*;  
+public class JavaStreamExample {  
+    public static void main(String[] args){  
+        Stream.iterate(1, element->element+1)  
+        .filter(element->element%5==0)  
+        .limit(5)  
+        .forEach(System.out::println);  
+    }  
+}  
